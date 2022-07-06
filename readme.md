@@ -43,3 +43,4 @@
 3. 修改完成提交之后，`git merge bugfix`把修改合并到master上，然后可以删除分支
 4. 这时候需要回到之前的开发，可以用`git stash apply`恢复，会保存stash记录，还可以用`git stash pop`来恢复stash，类似出栈，stash的内容被删除。可以通过 `git stash list` 查看暂存列表，恢复指定的stash
 5. 因为 dev 分支是在修复 bug 之前从 master 分出来的，所以 dev 上的 bug 还在，可以有一个简单的办法，把修改 bug 的提交复制到 dev 分支上，首先切换到 dev 分支，然后执行 `git cherry-pick commit_id`
+  
