@@ -26,3 +26,10 @@
 1. 把本地库和远程库管理
 `git remote add origin git@github.com:maqilei/study.git`
 2. 首次提交到远程库`git push -u origin master`, 之后提交 `git push origin master`
+### 分支管理
+1. 创建分支
+使用`git checkout -b dev`表示创建并切换到dev分支，相当于创建分支`git branch dev`和切换分支`git checkout dev` 两个命令的结合
+2. 查看分支
+`git branch`
+
+这是我新添加了一个分支的提交
