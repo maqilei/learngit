@@ -31,5 +31,7 @@
 使用`git checkout -b dev`表示创建并切换到dev分支，相当于创建分支`git branch dev`和切换分支`git checkout dev` 两个命令的结合
 2. 查看分支
 `git branch`
-
-这是我新添加了一个分支的提交
+3. 合并分支
+`git merge dev` 把指定的dev分支合并到当前分支
+4. 删除分支
+`git branch -d dev`
