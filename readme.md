@@ -23,5 +23,6 @@
 1. 正常在工作区直接删除后，通过 `git rm 文件名` 然后 `commit`即可
 2. 这种情况是在工作区删错了文件，而版本库里还有，需要恢复`git checkout -- test.txt`
 ### 与远程库关联
-```git remote add origin git@github.com:maqilei/study.git
-首次提交到远程库`git push -u origin master`, 之后提交 `git push origin master`
+1. 把本地库和远程库管理
+`git remote add origin git@github.com:maqilei/study.git`
+2. 首次提交到远程库`git push -u origin master`, 之后提交 `git push origin master`
