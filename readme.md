@@ -70,8 +70,6 @@ git branch --set-upstream-to=origin/dev dev  //设置dev和origin/dev的链接
 4. 没有冲突或者解决冲突后，再通过`git push origin <branch_name>`推送，即可成功
 5. 另，如果git pull时提示`no tracking information`，则说明本地分支和远程分支没有建立链接关系，用命令`git branch --set-upstream-to <branch-name> origin/<branch-name>`建立联系。
 
-### rebase
-> 对于很多个commit 提交的历史线可能比较乱，rebase可以把本地为push的分叉整理成直线，并且可以变基到指定的commit
 
 ### 版本
 > 给项目打上版本，其和commit绑定再一次，大的版本时某次commit提交后的结果
@@ -83,3 +81,10 @@ git tag v1.0
 ```
 git tag v0.9 <commit_id>
 ```
+
+### 拉取远程数据
+`git fetch`命令从服务器上抓取本地没有的数据时，只会拉去数据不会把数据与本机合并，而 git pull 时再拉取最新的数据之后还要git merge 合并一下，
+
+### rebase
+整合不同分支的修改有两种方法：merge 和 rebase，最简单的合并方法时merge，他会把两个分支的最新修改与他们最近的公共祖先进行三方合并合并生成一个新的结果并提交。而变基操作是把其中一个分支的更改，再另一个分支的最新提交基础上应用一次，即把提价到某一分支上的所有修改都移至另一分支上。
+见[详细分析](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)
