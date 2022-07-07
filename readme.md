@@ -44,8 +44,7 @@
 4. 这时候需要回到之前的开发，可以用`git stash apply`恢复，会保存stash记录，还可以用`git stash pop`来恢复stash，类似出栈，stash的内容被删除。可以通过 `git stash list` 查看暂存列表，恢复指定的stash
 5. 因为 dev 分支是在修复 bug 之前从 master 分出来的，所以 dev 上的 bug 还在，可以有一个简单的办法，把修改 bug 的提交复制到 dev 分支上，首先切换到 dev 分支，然后执行 `git cherry-pick commit_id`
 
-### 多人协作
-1. 推送分支
+### 推送分支
 ```git push origin master     // 推送到主分支
 ```git push origin dev        // 推送到dev分支
 ```
@@ -54,5 +53,14 @@
 1. 当从远程库上clone时，只能看到master分支需要创建远程的origin到本地
 ```git checkout -b dev origin/dev
 ```
-2. 如果项目的一个成员想origin/dev分支推送了他的提交，然后自己也做了修改并做了推送,会推送失败
+2. 如果项目的一个成员想origin/dev分支推送了他的提交，然后自己也做了修改并做了推送,会推送失败,原因时没有指定本地dev分支与远程`origin/dev`分支的链接
+```git branch --set-upstream-to=origin/dev dev  //设置dev和origin/dev的链接
+```
+3. 再次 git pull 可以成功，但是有冲突，先修复冲突，然后git pull,然后可能跟当前合并有有冲突，动手解决后，再commit 再 push 
 
+### 多人协作
+1. 首先 直接通过 `git push origin <branch_name>`推送自己的修改
+2. 如果推送失败，说明有其他成员向远程分支提交了修改，本地落后远程分支，需要先把更新的内容拉取下来，用`git pull`试图合并
+3. 如果合并有冲突，则解决冲突，再commit
+4. 没有冲突或者解决冲突后，再通过`git push origin <branch_name>`推送，即可成功
+5. 另，如果git pull时提示`no tracking information`，则说明本地分支和远程分支没有建立链接关系，用命令`git branch --set-upstream-to <branch-name> origin/<branch-name>`建立联系。
