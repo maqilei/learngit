@@ -19,6 +19,12 @@
    回退到上次提交的版本，HEAD代表当前版本，HEAD^代表上一版本
 5. git reflog
    查看历史命令
+6. git remote -v 
+   查看所有的远程地址
+7. git remote add origin 远程仓库地址
+   把本地与远程仓库链接起来
+8. git remote rm origin
+   删除与远程仓库的联系
 ### 删除文件
 1. 正常在工作区直接删除后，通过 `git rm 文件名` 然后 `commit`即可
 2. 这种情况是在工作区删错了文件，而版本库里还有，需要恢复`git checkout -- test.txt`
