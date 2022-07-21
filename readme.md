@@ -97,6 +97,6 @@ git tag v0.9 <commit_id>
 >比如再本地有两个分支master和dev，都做了一些改动，这是提交历史出现了分叉，这时执行git checkout dev，切换到dev分支，再执行git rebase master,就是把dev上的修改都移动到master分支上，master上的更改领先了，这时切换到master分支，把修改合并git checkout master, git merge dev
 
 ### 合并commit
-合并最近一次commit
+合并最近一次commit  
 git commit --amend -m "message"
    
