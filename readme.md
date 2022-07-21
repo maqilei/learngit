@@ -92,7 +92,6 @@ git tag v0.9 <commit_id>
 `git fetch`命令从服务器上抓取本地没有的数据时，只会拉去数据不会把数据与本机合并，而 git pull 时再拉取最新的数据之后还要git merge 合并一下，
 
 ### rebase
-<<<<<<< HEAD
 整合不同分支的修改有两种方法：merge 和 rebase，最简单的合并方法时merge，他会把两个分支的最新修改与他们最近的公共祖先进行三方合并合并生成一个新的结果并提交。而变基操作是把其中一个分支的更改，再另一个分支的最新提交基础上应用一次，即把提交到某一分支上的所有修改都移至另一分支上。
 见[详细分析](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)
 >比如再本地有两个分支master和dev，都做了一些改动，这是提交历史出现了分叉，这时执行git checkout dev，切换到dev分支，再执行git rebase master,就是把dev上的修改都移动到master分支上，master上的更改领先了，这时切换到master分支，把修改合并git checkout master, git merge dev
@@ -101,3 +100,4 @@ git tag v0.9 <commit_id>
 合并最近一次commit
 git commit --amend -m "message"
 
+--
